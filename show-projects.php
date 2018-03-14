@@ -1,4 +1,4 @@
-<!DOCKTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf8"/>
@@ -35,7 +35,14 @@
                     $result= $conn->query($sql);
                     if($result->num_rows >0){
                         while($row = $result->fetch_assoc()){
-                            echo "<tr><td>".$row["name"]."</td><td>".$row["student_name"]."</td><td>".$row["date"]."</td></tr>";
+                            echo "<tr>";
+                            echo  "<td>" . $row["name"] . "</td>";
+                            echo  "<td>" . $row["student_name"] . "</td>";
+                            echo  "<td>" . $row["date"] . "</td>";
+                            echo "<td><a href='project-details.php?id=" . $row["id"] . "'>View</a></td></tr>";
+                            echo "</tr>";
+
+                        
                         }
                     }
               ?>      
