@@ -39,7 +39,9 @@
                             echo  "<td>" . $row["name"] . "</td>";
                             echo  "<td>" . $row["student_name"] . "</td>";
                             echo  "<td>" . $row["date"] . "</td>";
-                            echo "<td><a href='project-details.php?id=" . $row["id"] . "'>View</a></td></tr>";
+                            echo "<td><a href='project-details.php?id=" . $row["id"] . "'>View</a></td>";
+                            echo "<td><a href='edit-project.php?id=" . $row["id"] . "'>Edit</a></td>";
+                            echo "<td><a href='delete-project.php?id=" . $row["id"] . "'>Delete</a></td>";
                             echo "</tr>";
 
                         

@@ -13,7 +13,7 @@
          
          $conn = mysqli_connect($servername, $username, $password, $database);
 
-         $sql = "SELECT * FROM `projects` WHERE id = 5";
+         $sql = "SELECT * FROM `projects` WHERE id = '$_GET[id]'";
          $query= mysqli_query($conn, $sql);
          $result = mysqli_fetch_assoc($query);
          if(!$result) {
