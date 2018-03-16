@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="bord">
-		<form method="POST" action="create-project.php">
+		<form method="POST" action="create-project.php" enctype='multipart/form-data'>
 		<div class="text">
 			Project name: <input type="text" name="name" class="input" />
 		</div>

@@ -20,9 +20,10 @@
                     <td>Project name</td>
                     <td>Student name</td>
                     <td>Date</td>
-                    <td><a href="viewProject.php">View</a></td>
-                    <td><a href="editProject.php">Edit</a></td>
-                    <td><a href="deleteProject.php">Delete</a></td>
+                    <td>Document</td>
+                    <td>View</a></td>
+                    <td>Edit</a></td>
+                    <td>Delete</a></td>
                 </tr>
                 <?php
                     $servername = "localhost";
@@ -39,6 +40,7 @@
                             echo  "<td>" . $row["name"] . "</td>";
                             echo  "<td>" . $row["student_name"] . "</td>";
                             echo  "<td>" . $row["date"] . "</td>";
+                            echo  "<td>" . $row["document_name"] . "</td>";
                             echo "<td><a href='project-details.php?id=" . $row["id"] . "'>View</a></td>";
                             echo "<td><a href='edit-project.php?id=" . $row["id"] . "'>Edit</a></td>";
                             echo "<td><a href='delete-project.php?id=" . $row["id"] . "'>Delete</a></td>";

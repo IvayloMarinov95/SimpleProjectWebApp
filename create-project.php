@@ -5,10 +5,22 @@
          $database = "projectsdb";
          
          $conn = mysqli_connect($servername, $username, $password, $database);
+         if(isset($_FILES['file'])){
+           $file = $_FILES['file']['name'];
+           $target =  __DIR__ . "\projects\\". $file; 
+           echo $_FILES['file']['name'];
+           echo nl2br("\n");
+           if (move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
+            echo "Image uploaded successfully";
+          }
+          else{
+            echo "Failed to upload image";
+          }
+         }        
          
-		 $sql="INSERT INTO projects (name, student_name, date) VALUES('$_POST[name]','$_POST[student_name]', NOW())";
+		 $sql="INSERT INTO projects (name, student_name, date, document_name) VALUES('$_POST[name]','$_POST[student_name]', NOW(), '". $file. "')";
          if($conn->query($sql)) {
-         echo "added";
+         
           header("Location: http://localhost/Projects/show-projects.php"); 
             exit();
          }
