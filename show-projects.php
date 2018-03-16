@@ -32,7 +32,7 @@
                     $database = "projectsdb";
 
                     $conn = mysqli_connect($servername, $username, $password, $database);
-                    $sql = "SELECT * FROM `projects`" ;
+                    $sql = "SELECT * FROM `projects` ORDER by id DESC" ;
                     $result= $conn->query($sql);
                     if($result->num_rows >0){
                         while($row = $result->fetch_assoc()){
